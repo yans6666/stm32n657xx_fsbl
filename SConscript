@@ -58,12 +58,10 @@ include_paths = [
 
 if rtconfig.PLATFORM == 'gcc':
     fsbl_sources.append(os.path.join(
-        bsp_root, 'packages', 'stm32n6_cmsis_driver-latest', 'Source',
-        'Templates', 'gcc', 'startup_stm32n657xx_fsbl.s'))
+        package_dir, 'MDK-ARM', 'startup_stm32n657xx_fsbl.s'))
 elif rtconfig.PLATFORM in ['armcc', 'armclang']:
     fsbl_sources.append(os.path.join(
-        bsp_root, 'packages', 'stm32n6_cmsis_driver-latest', 'Source',
-        'Templates', 'arm', 'startup_stm32n657xx_fsbl.c'))
+        package_dir, 'MDK-ARM', 'startup_stm32n657xx_fsbl.c'))
 else:
     raise RuntimeError('stm32n657xx_fsbl supports GCC and Arm Compiler only')
 
